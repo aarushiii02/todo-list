@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/assets/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    <form method="post">
+        <input id="input" type="text" placeholder="enter data" name="data" />
+        <button id="btn" type="submit">Add</button>
+        </form>
+        <div id="buttons">
+            <%  for(let i=0;i<arr.length;i++ ){ %>
+            <h3> <%= arr[i] %></h3>
+            <% id=i%>
+            
+            <% url="/delete/"+i%>
+            <% url1="/edit/" +i%>
+            <div class="main">
+
+            
+            <button id="editt"><a href="<%= url1%>">edit</a></button>
+           
+            <form action="<%= url%>?_method=DELETE" method="post">
+                <button id="delete" type="submit"> delete</button>
+           </form>
+            
+            <%   } %> 
+        </div>
+           
+        </div>
+    </div>
+        
+
+</body>
+</html>
